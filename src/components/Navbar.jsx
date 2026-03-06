@@ -28,7 +28,7 @@ export default function Navbar({ currentPage, onPageChange }) {
         </motion.div>
 
         {/* Page Toggle */}
-        <div className="relative flex items-center bg-white/[0.06] rounded-full p-1 border border-white/10">
+        <div className="relative flex items-center bg-white/[0.06] rounded-full p-1  border border-white/10 lg:ml-28">
           {tabs.map((tab) => (
             <button
               key={tab.id}
