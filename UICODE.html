@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Say It Social - Social Media Agency</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Dancing+Script:wght@700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#06b6d4", // Cyan/Teal
+                        secondary: "#f59e0b", // Amber/Gold
+                        "background-light": "#f8fafc",
+                        "background-dark": "#020405", // Very deep black/gray
+                        "surface-dark": "#0f1115",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        script: ['"Dancing Script"', 'cursive'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': "1rem",
+                        '2xl': "1.5rem",
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at center, rgba(6,182,212,0.15) 0%, rgba(2,4,5,0) 70%)',
+                        'card-gradient': 'linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        .text-gradient-teal {
+            background: linear-gradient(to right, #06b6d4, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(to right, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-sans antialiased transition-colors duration-300">
+    <nav
+        class="fixed w-full z-50 top-0 left-0 px-6 py-4 bg-background-light/90 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a class="text-2xl font-bold flex items-center gap-2 text-slate-900 dark:text-white" href="#">
+                <span>Say It</span>
+                <span class="font-script text-3xl text-primary">Social</span>
+            </a>
+            <button
+                class="hidden md:block px-6 py-2 bg-gradient-to-r from-primary to-cyan-500 text-white rounded-full font-semibold hover:opacity-90 transition shadow-[0_0_15px_rgba(6,182,212,0.4)] text-sm">
+                Connect With Us
+            </button>
+        </div>
+    </nav>
+    <header class="relative pt-32 pb-20 px-6 overflow-hidden">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-hero-glow pointer-events-none opacity-60 dark:opacity-100">
+        </div>
+        <div class="relative max-w-5xl mx-auto text-center z-10">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-6 text-slate-900 dark:text-white">
+                Social Media That <br />
+                <span class="text-gradient-teal">Drives Real</span> <br />
+                <span class="text-gradient-gold">Growth</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-slate-600 dark:text-slate-400 text-lg mb-10">
+                Strategic campaigns that transform brands into social powerhouses. We turn engagement into revenue.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+                <button
+                    class="px-8 py-3 bg-gradient-to-r from-primary to-cyan-600 text-white rounded-md font-semibold hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition duration-300 w-full sm:w-auto">
+                    Connect With Our Team
+                </button>
+                <button
+                    class="px-8 py-3 border border-slate-300 dark:border-slate-700 bg-white dark:bg-transparent text-slate-800 dark:text-white rounded-md font-semibold hover:bg-slate-50 dark:hover:bg-white/5 transition duration-300 w-full sm:w-auto">
+                    Our Website
+                </button>
+            </div>
+            <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto border-t border-slate-200 dark:border-white/10 pt-8">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-primary mb-1">10+</div>
+                    <div class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-500">Industries</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-secondary mb-1">2M+</div>
+                    <div class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-500">Total Reach</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-primary mb-1">5x</div>
+                    <div class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-500">Lead Velocity</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="py-20 px-6 bg-slate-50 dark:bg-[#030506]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-900 dark:text-white">
+                Portfolio <span class="text-gradient-teal">Highlights</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div
+                    class="group relative rounded-2xl bg-white dark:bg-card-gradient border border-slate-200 dark:border-white/10 p-8 hover:border-primary/50 transition duration-300 glass-card">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-2 bg-slate-100 dark:bg-white/5 rounded-lg">
+                            <span class="material-icons-outlined text-slate-600 dark:text-slate-400">camera_alt</span>
+                        </div>
+                        <span
+                            class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-white/5">Sports
+                            Content</span>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold mb-8 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                        Cricstudioinc</h3>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Core
+                            Impact</p>
+                        <p class="text-secondary font-semibold">Community Built</p>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none">
+                    </div>
+                </div>
+                <div
+                    class="group relative rounded-2xl bg-white dark:bg-card-gradient border border-slate-200 dark:border-white/10 p-8 hover:border-primary/50 transition duration-300 glass-card">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-2 bg-slate-100 dark:bg-white/5 rounded-lg">
+                            <span class="material-icons-outlined text-slate-600 dark:text-slate-400">visibility</span>
+                        </div>
+                        <span
+                            class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-white/5">Premium
+                            Eyewear</span>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold mb-8 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                        Shiva Optics Plus</h3>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Core
+                            Impact</p>
+                        <p class="text-secondary font-semibold">Brand Elevated</p>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none">
+                    </div>
+                </div>
+                <div
+                    class="group relative rounded-2xl bg-white dark:bg-card-gradient border border-slate-200 dark:border-white/10 p-8 hover:border-primary/50 transition duration-300 glass-card">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-2 bg-slate-100 dark:bg-white/5 rounded-lg">
+                            <span class="material-icons-outlined text-slate-600 dark:text-slate-400">shopping_bag</span>
+                        </div>
+                        <span
+                            class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-white/5">E-Commerce</span>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold mb-8 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                        Shiva Enterprise</h3>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Core
+                            Impact</p>
+                        <p class="text-secondary font-semibold">Modern Strategy</p>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none">
+                    </div>
+                </div>
+                <div
+                    class="group relative rounded-2xl bg-white dark:bg-card-gradient border border-slate-200 dark:border-white/10 p-8 hover:border-primary/50 transition duration-300 glass-card">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-2 bg-slate-100 dark:bg-white/5 rounded-lg">
+                            <span
+                                class="material-icons-outlined text-slate-600 dark:text-slate-400">auto_fix_high</span>
+                        </div>
+                        <span
+                            class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-white/5">AI
+                            &amp; VR Solutions</span>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold mb-8 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                        The Quick Craft</h3>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Core
+                            Impact</p>
+                        <p class="text-secondary font-semibold">Innovation Driven</p>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none">
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div
+                    class="group relative rounded-2xl bg-white dark:bg-card-gradient border border-slate-200 dark:border-white/10 p-8 hover:border-primary/50 transition duration-300 glass-card">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-2 bg-slate-100 dark:bg-white/5 rounded-lg">
+                            <span class="material-icons-outlined text-slate-600 dark:text-slate-400">spa</span>
+                        </div>
+                        <span
+                            class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-white/5">Skincare
+                            &amp; Haircare</span>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold mb-8 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                        Dronagiri Herbal</h3>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Core
+                            Impact</p>
+                        <p class="text-secondary font-semibold">100% Herbal</p>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none">
+                    </div>
+                </div>
+                <div
+                    class="group relative rounded-2xl bg-white dark:bg-card-gradient border border-slate-200 dark:border-white/10 p-8 hover:border-primary/50 transition duration-300 glass-card">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-2 bg-slate-100 dark:bg-white/5 rounded-lg">
+                            <span class="material-icons-outlined text-slate-600 dark:text-slate-400">checkroom</span>
+                        </div>
+                        <span
+                            class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-white/5">Fashion
+                            &amp; Lifestyle</span>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold mb-8 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                        Kalon Ethnic</h3>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Core
+                            Impact</p>
+                        <p class="text-secondary font-semibold">Traditional Meets Modern</p>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 px-6 bg-background-light dark:bg-background-dark">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-slate-900 dark:text-white">
+                All <span class="text-secondary">Clients</span>
+            </h2>
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button
+                    class="px-5 py-2 rounded-full text-xs font-semibold bg-gradient-to-r from-primary to-cyan-500 text-white shadow-lg shadow-primary/20">All</button>
+                <button
+                    class="px-5 py-2 rounded-full text-xs font-semibold bg-slate-200 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-white/10 transition border border-transparent dark:border-white/5">Sports
+                    Content</button>
+                <button
+                    class="px-5 py-2 rounded-full text-xs font-semibold bg-slate-200 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-white/10 transition border border-transparent dark:border-white/5">Premium
+                    Eyewear</button>
+                <button
+                    class="px-5 py-2 rounded-full text-xs font-semibold bg-slate-200 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-white/10 transition border border-transparent dark:border-white/5">E-commerce</button>
+                <button
+                    class="px-5 py-2 rounded-full text-xs font-semibold bg-slate-200 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-white/10 transition border border-transparent dark:border-white/5">AI
+                    &amp; VR Solutions</button>
+                <button
+                    class="px-5 py-2 rounded-full text-xs font-semibold bg-slate-200 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-white/10 transition border border-transparent dark:border-white/5">Skincare</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="bg-white dark:bg-[#080a0c] border border-slate-200 dark:border-white/5 p-6 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+                    <div class="flex justify-between items-center mb-4">
+                        <span
+                            class="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded">Sports
+                            Content</span>
+                        <span
+                            class="material-icons-outlined text-primary text-sm opacity-50 group-hover:opacity-100">open_in_new</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Cricstudioinc</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Cricket content &amp; brand
+                        building - Building a strong community around sports content.</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#080a0c] border border-slate-200 dark:border-white/5 p-6 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+                    <div class="flex justify-between items-center mb-4">
+                        <span
+                            class="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded">Premium
+                            Eyewear</span>
+                        <span
+                            class="material-icons-outlined text-primary text-sm opacity-50 group-hover:opacity-100">open_in_new</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Shiva Optics Plus</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Transforming premium eyewear
+                        brand presence with sophisticated, minimal design.</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#080a0c] border border-slate-200 dark:border-white/5 p-6 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+                    <div class="flex justify-between items-center mb-4">
+                        <span
+                            class="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded">E-Commerce</span>
+                        <span
+                            class="material-icons-outlined text-primary text-sm opacity-50 group-hover:opacity-100">open_in_new</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Shiva Enterprise</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Modern eyewear e-commerce
+                        social strategy - Thoughtfully selected products.</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#080a0c] border border-slate-200 dark:border-white/5 p-6 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+                    <div class="flex justify-between items-center mb-4">
+                        <span
+                            class="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded">AI
+                            &amp; VR Solutions</span>
+                        <span
+                            class="material-icons-outlined text-primary text-sm opacity-50 group-hover:opacity-100">open_in_new</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">The Quick Craft</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">AI-powered design &amp; VR
+                        solutions - Leveraging AI and human creativity.</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#080a0c] border border-slate-200 dark:border-white/5 p-6 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+                    <div class="flex justify-between items-center mb-4">
+                        <span
+                            class="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded">Skincare</span>
+                        <span
+                            class="material-icons-outlined text-primary text-sm opacity-50 group-hover:opacity-100">open_in_new</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Dronagiri Herbal</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Natural skincare &amp;
+                        haircare brand launch - 100% herbal products.</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#080a0c] border border-slate-200 dark:border-white/5 p-6 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+                    <div class="flex justify-between items-center mb-4">
+                        <span
+                            class="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded">Student
+                            Accomm.</span>
+                        <span
+                            class="material-icons-outlined text-primary text-sm opacity-50 group-hover:opacity-100">open_in_new</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Shivaangi Hostel</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Student accommodation brand
+                        building - Establishing trust within education community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 px-6 bg-slate-100 dark:bg-[#030506]">
+        <div
+            class="max-w-6xl mx-auto relative group cursor-pointer overflow-hidden rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0a0c10] shadow-2xl">
+            <div
+                class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 dark:opacity-20 mix-blend-overlay">
+            </div>
+            <div class="relative z-10 flex flex-col items-center justify-center py-24 text-center px-4">
+                <div class="flex items-center gap-2 text-secondary text-xs font-bold uppercase tracking-widest mb-4">
+                    <span class="material-icons-outlined text-sm">auto_awesome</span>
+                    Social Showreel 2024
+                    <span class="material-icons-outlined text-sm">auto_awesome</span>
+                </div>
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">
+                    Creativity. <span class="text-primary">Consistency.</span> <span
+                        class="text-secondary">Growth.</span>
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-lg mx-auto mb-10">
+                    Watch how we've transformed social feeds into revenue-generating engines
+                </p>
+                <div
+                    class="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-cyan-300 flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.4)] group-hover:scale-110 transition-transform duration-300">
+                    <span class="material-icons-outlined text-white text-4xl ml-1">play_arrow</span>
+                </div>
+            </div>
+            <div class="absolute bottom-6 left-6 flex gap-3">
+                <div
+                    class="bg-black/80 backdrop-blur text-white px-4 py-2 rounded-full text-[10px] font-bold border border-white/10">
+                    15+ Campaigns</div>
+                <div
+                    class="bg-black/80 backdrop-blur text-white px-4 py-2 rounded-full text-[10px] font-bold border border-white/10">
+                    2M+ Reach</div>
+                <div
+                    class="bg-black/80 backdrop-blur text-white px-4 py-2 rounded-full text-[10px] font-bold border border-white/10">
+                    3 Min Watch</div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 px-6 bg-background-light dark:bg-background-dark text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
+                Ready to Skyrocket Your <br />
+                <span class="text-gradient-teal">Social Presence?</span>
+            </h2>
+            <div class="flex items-center justify-center mt-10">
+                <div class="relative inline-flex group">
+                    <div
+                        class="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-primary via-cyan-400 to-secondary rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
+                    </div>
+                    <div
+                        class="relative inline-flex items-center justify-between px-8 py-4 text-sm font-bold text-white transition-all duration-200 bg-slate-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 w-full sm:w-auto">
+                        <div class="flex items-center gap-4">
+                            <span class="bg-slate-800 px-3 py-1 rounded text-[10px] uppercase text-slate-400">Social
+                                Media</span>
+                            <span class="text-[10px] uppercase text-slate-400">Web Design</span>
+                            <span class="h-6 w-px bg-slate-700 mx-2"></span>
+                            <span class="text-primary">Connect With Our Team</span>
+                            <span class="material-icons-outlined ml-2 text-primary">arrow_forward</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-20 pt-10 border-t border-slate-200 dark:border-white/10">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-primary mb-1">10+</div>
+                    <div class="text-[10px] uppercase tracking-wider text-slate-500">Industries</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-secondary mb-1">2M+</div>
+                    <div class="text-[10px] uppercase tracking-wider text-slate-500">Total Reach</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-primary mb-1">5+</div>
+                    <div class="text-[10px] uppercase tracking-wider text-slate-500">Lead Velocity</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="py-12 px-6 bg-slate-50 dark:bg-[#010101] border-t border-slate-200 dark:border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div class="max-w-sm">
+                <a class="text-2xl font-bold flex items-center gap-2 mb-6 text-slate-900 dark:text-white" href="#">
+                    <span>Say It</span>
+                    <span class="font-script text-3xl text-primary">Social</span>
+                </a>
+                <p class="text-sm text-slate-500 dark:text-slate-500 leading-relaxed">
+                    Strategic campaigns that transform brands into social powerhouses. We turn engagement into revenue.
+                </p>
+            </div>
+            <div class="text-right md:text-left">
+                <h4 class="font-bold text-white mb-4 text-sm uppercase tracking-wide">Get In Touch</h4>
+                <p class="text-sm text-slate-500 mb-6">WhatsApp: +91 84607 32085</p>
+                <div class="flex gap-4 md:justify-start">
+                    <a class="w-8 h-8 flex items-center justify-center rounded bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-white hover:bg-primary hover:text-white transition-colors"
+                        href="#">
+                        <i class="text-sm">IG</i>
+                    </a>
+                    <a class="w-8 h-8 flex items-center justify-center rounded bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-white hover:bg-primary hover:text-white transition-colors"
+                        href="#">
+                        <i class="text-sm">FB</i>
+                    </a>
+                    <a class="w-8 h-8 flex items-center justify-center rounded bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-white hover:bg-primary hover:text-white transition-colors"
+                        href="#">
+                        <i class="text-sm">YT</i>
+                    </a>
+                    <a class="w-8 h-8 flex items-center justify-center rounded bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-white hover:bg-primary hover:text-white transition-colors"
+                        href="#">
+                        <i class="text-sm">IN</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-white/5 text-center text-xs text-slate-400 dark:text-slate-600">
+            © 2026 Say It Social. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>

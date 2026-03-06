@@ -1,0 +1,57 @@
+
+Meeting Purpose
+
+Review portfolio design and define a new, more dynamic direction.
+
+Key Takeaways
+
+  - New Dynamic Layout: The portfolio will feature distinct, animated landing pages for Social Media and Web Design, showcasing the agency's creative range.
+  - Portfolio Overhaul: The portfolio will be rebuilt to be visually driven, replacing long case studies with client lists categorized by industry (e.g., Retail, Fashion, AI/VR).
+  - Clearer CTAs: All Call-to-Action (CTA) buttons will be relabeled for clarity (e.g., "Connect with our team" instead of "Get started") to improve the user journey and SEO.
+  - Web Design Case Studies: Unlike Social Media, the Web Design section will retain case studies to detail performance metrics like SEO, page speed, and competitive analysis.
+
+Topics
+
+Portfolio Strategy & Structure
+
+  - Goal: Shift from a traditional, text-heavy portfolio to a modern, visually dynamic showcase.
+  - Rationale: The current design feels "cheap" and dated. The new approach will demonstrate creative range and attract high-value clients.
+  - Key Structural Changes:
+      - Social Media Section: Remove all case studies.
+      - Web Design Section: Retain case studies to detail performance metrics.
+      - Client List: Replace the current grid with a categorized list (e.g., Retail, Fashion, AI/VR). Darshil will provide the categories.
+
+Design & Content Details
+
+  - Visuals:
+      - Gradient: Replace the current gradient, which looks "pennant-like," with a more professional alternative.
+      - "Growth" Text: Use a hover effect to highlight the word "growth."
+      - Animations: Create distinct, animated landing pages for Social Media and Web Design.
+      - Web Design Projects:
+          - Use clickable homepage images for each project.
+          - Color-code project tags (e.g., "B2B Platform") to make them stand out.
+  - Content:
+      - Headline: Replace "Premium Social Media Marketing Agency" with a more sophisticated alternative.
+      - "Clients Love Us" Section: Remove, as feedback is already on the main website.
+      - Video: A new agency video will be embedded via a YouTube link.
+      - Metrics: Darshil will provide specific numbers for metrics like average ROAS.
+      - Footer: Simplify by removing redundant links (e.g., "Quick Links," "Case Study").
+
+Call-to-Action (CTA) Optimization
+
+  - Rationale: Improve user clarity and SEO.
+  - New CTA Labels:
+      - "Get Started" → "Connect with our team" (links to WhatsApp)
+      - "Explore our work" → "Go to our website" (links to main site)
+      - "Start your journey" → (links to a 10-question Google Form for client intake)
+
+Next Steps
+
+  - Darshil:
+      - Provide the categorized client list for the Social Media section.
+      - Provide the specific numbers for portfolio metrics (e.g., average ROAS).
+      - Provide the full list of websites for the Web Design section.
+  - Designer:
+      - Redesign the portfolio with distinct, animated landing pages for Social Media and Web Design.
+      - Implement all specified content and CTA changes.
+      - Update the color scheme, including the main gradient and project tags.
