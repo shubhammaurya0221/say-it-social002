@@ -34,36 +34,51 @@ export default function ClientShowcase() {
 
         {/* Category Filter */}
         <motion.div
-          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-14 px-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {clientCategories.map((cat, i) => {
-            const isActive = activeCategory === cat;
-            return (
-              <motion.button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 
-  ${
-    isActive
-      ? "text-black bg-[linear-gradient(135deg,#04AAA5_0%,#00F2EA_50%,#04AAA5_100%)] shadow-[0_0_20px_rgba(4,170,165,0.35)]"
-      : "bg-white/[0.04] border border-white/15 text-gray-400 hover:border-teal-400/50 hover:text-white"
-  }`}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 * i }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {cat}
-              </motion.button>
-            );
-          })}
-        </motion.div>
+  className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-14 px-4"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+>
+  {clientCategories.map((cat, i) => {
+    const isActive = activeCategory === cat;
+    return (
+      <motion.button
+        key={cat}
+        onClick={() => setActiveCategory(cat)}
+        // Added constant border-2 and removed solid bg-colors
+        className={`group relative px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-500 border-2 outline-none
+          ${
+            isActive
+              ? "text-white border-[#fbaf40] shadow-[0_0_15px_rgba(251,175,64,0.4)]"
+              : "text-gray-500 border-transparent hover:text-gray-300 hover:border-white/10"
+          }`}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: 0.1 * i }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        {/* The sliding gold highlight */}
+        {isActive && (
+          <motion.div
+            layoutId="activeCategoryHighlight" // Unique ID separate from the social toggle
+            className="absolute inset-0 bg-[#fbaf40]/10 rounded-full -z-10"
+            transition={{
+              type: "spring",
+              stiffness: 500,
+              damping: 35,
+              mass: 1
+            }}
+          />
+        )}
+        
+        <span className="relative z-10 whitespace-nowrap">{cat}</span>
+      </motion.button>
+    );
+  })}
+</motion.div>
 
         {/* Client Grid */}
         <motion.div
