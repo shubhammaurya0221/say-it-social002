@@ -228,7 +228,10 @@ body {
     background-position: 0% 0;
   }
 }
-
+@keyframes shine {
+  0% { left: -50%; }
+  100% { left: 150%; }
+}
 /* ---- Section Divider Line Animation ---- */
 .animated-divider {
   height: 2px;

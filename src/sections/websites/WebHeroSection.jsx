@@ -150,25 +150,23 @@ export default function WebHeroSection({ scrollY }) {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 px-4"
         >
           <motion.a
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`https://wa.me/918460732085?text=${encodeURIComponent("Hello!")}`}
             whileHover={{
               scale: 1.05,
-              boxShadow: "0px 0px 30px rgba(20, 184, 166, 0.4)",
+              borderColor: "#fbaf40",
+              boxShadow: "0 0 20px rgba(251, 175, 64, 0.2)",
             }}
             whileTap={{ scale: 0.98 }}
-            href={`https://wa.me/918460732085?text=${encodeURIComponent("Hello!")}`}
-            className="group relative inline-flex items-center justify-center 
-                         w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4
-                         rounded-lg font-semibold text-black text-sm sm:text-base
-                         bg-[linear-gradient(135deg,#0D4F4B_0%,#4CB6A6_45%,#E6C27A_100%)]
-                         overflow-hidden transition-all duration-300 cursor-pointer"
+            className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 
+                       border-2 border-white/20 text-white font-bold rounded-lg 
+                       transition-all duration-300 text-center text-sm sm:text-base 
+                       overflow-hidden bg-transparent cursor-pointer inline-block"
           >
-            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-white/30 via-white/10 to-transparent blur-md"></span>
-            <span className="absolute -left-1/2 top-0 h-full w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-[shine_1.2s_ease_forwards]"></span>
-            <span className="relative font-bold z-10">
-              Connect With Our Team
-            </span>
+            <span className="absolute inset-0 bg-gradient-to-r from-teal/10 to-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <span className="absolute -top-[2px] -left-[2px] w-4 h-4 border-t-2 border-l-2 border-gold opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-tl-lg" />
+            <span className="absolute -bottom-[2px] -right-[2px] w-4 h-4 border-b-2 border-r-2 border-gold opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-br-lg" />
+            <span className="absolute -left-full top-0 h-full w-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[35deg] transition-all duration-700 group-hover:left-[150%]" />
+            <span className="relative z-10">Connect With Our Team</span>
           </motion.a>
 
           <motion.a

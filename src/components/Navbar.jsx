@@ -28,7 +28,7 @@ export default function Navbar({ currentPage, onPageChange }) {
         </motion.div>
 
         {/* Page Toggle */}
-        <div className="relative flex items-center bg-white/[0.06] rounded-full p-1  border border-white/10 lg:ml-28">
+        {/* <div className="relative flex items-center bg-white/[0.06] rounded-full p-1  border border-white/10 lg:ml-[100px]">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -42,51 +42,70 @@ export default function Navbar({ currentPage, onPageChange }) {
               {currentPage === tab.id && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute inset-0 bg-[linear-gradient(135deg,#0D4F4B_0%,#4CB6A6_45%,#E6C27A_100%)] rounded-full"
+                  className="absolute inset-0 bg-[linear-gradient(135deg,#04AAA5_0%,#00F2EA_50%,#04AAA5_100%)] rounded-full"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
               <span className="relative z-10">{tab.label}</span>
             </button>
           ))}
-        </div>
+        </div> */}
+      <div className="relative bg-white/[0.03] backdrop-blur-md rounded-full flex items-center p-1 border border-white/5 lg:ml-[100px] gap-1 sm:gap-2">
+  {tabs.map((tab) => {
+    const isActive = currentPage === tab.id;
+    return (
+      <button
+        key={tab.id}
+        onClick={() => onPageChange(tab.id)}
+        // 1. Added a constant 'border-2' to prevent layout jumps
+        // 2. Used 'duration-500' for smoother color fading
+        className={`group relative px-3 sm:px-6 py-1 sm:py-2 rounded-full text-[10px] sm:text-sm font-bold transition-all duration-500 border-2 outline-none
+          ${isActive 
+            ? "text-white border-[#fbaf40] shadow-[0_0_15px_rgba(251,175,64,0.4)]" 
+            : "text-gray-500 border-transparent hover:text-gray-300 hover:border-white/10"
+          }`}
+      >
+        {isActive && (
+          <motion.div
+            layoutId="activeTabHighlight" // Unique ID to sync the sliding animation
+            className="absolute inset-0 bg-[#fbaf40]/10 rounded-full -z-10"
+            // 3. High stiffness and low damping for a responsive, snappy "spring" feel
+            transition={{ 
+              type: "spring", 
+              stiffness: 500, 
+              damping: 35,
+              mass: 1 
+            }}
+          />
+        )}
+        <span className="relative z-10 whitespace-nowrap">{tab.label}</span>
+      </button>
+    );
+  })}
+</div>
 
         {/* CTA */}
-        <a
-          href={`https://wa.me/918460732085?text=${encodeURIComponent(
-            currentPage === "smm"
-              ? "Hello, I would like to understand more about Social Media Services provided by Say It Social."
-              : "Hello, I would like to understand more about Website Design & Development services provided by Say It Social.",
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:flex group relative px-4 lg:px-6 py-2 
-                     rounded-lg font-semibold text-black text-sm lg:text-base
-                     bg-[linear-gradient(135deg,#0D4F4B_0%,#4CB6A6_45%,#E6C27A_100%)]
-                     overflow-hidden
-                     transition-all duration-300
-                     hover:scale-[1.04]
-                     hover:shadow-[0_0_35px_rgba(230,194,122,0.35)]"
+
+        <motion.a
+          href={`https://wa.me/918460732085?text=${encodeURIComponent("Hello!")}`}
+          whileHover={{
+            scale: 1.05,
+            borderColor: "#fbaf40",
+            boxShadow: "0 0 20px rgba(251, 175, 64, 0.2)",
+          }}
+          whileTap={{ scale: 0.98 }}
+          /* Reduced padding and font size below */
+          className="hidden md:flex group relative w-full sm:w-auto px-4 sm:px-6 py-1.5 sm:py-2 
+             border-2 border-white/20 text-white font-bold rounded-lg 
+             transition-all duration-300 text-center text-xs sm:text-sm 
+             overflow-hidden bg-transparent cursor-pointer"
         >
-          {/* Layer 1: Glass Shine Overlay */}
-          <span
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500
-                     bg-[linear-gradient(120deg,transparent_20%,rgba(255,255,255,0.35)_50%,transparent_80%)]
-                     blur-md"
-          ></span>
-
-          {/* Layer 2: Moving Light Sweep (Animated on Hover) */}
-          <span
-            className="absolute -left-1/2 top-0 h-full w-1/2 
-                       bg-gradient-to-r from-transparent via-white/40 to-transparent
-                       skew-x-12
-                       opacity-0 group-hover:opacity-100
-                       group-hover:animate-[shine_1.2s_ease_forwards]"
-          ></span>
-
-          {/* Button Content */}
-          <span className="relative font-bold z-10">Connect With Our Team</span>
-        </a>
+          <span className="absolute inset-0 bg-gradient-to-r from-teal/10 to-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <span className="absolute -top-[2px] -left-[2px] w-4 h-4 border-t-2 border-l-2 border-gold opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-tl-lg" />
+          <span className="absolute -bottom-[2px] -right-[2px] w-4 h-4 border-b-2 border-r-2 border-gold opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-br-lg" />
+          <span className="absolute -left-full top-0 h-full w-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[35deg] transition-all duration-700 group-hover:left-[150%]" />
+          <span className="relative z-10">Connect With Our Team</span>
+        </motion.a>
       </div>
     </motion.nav>
   );
