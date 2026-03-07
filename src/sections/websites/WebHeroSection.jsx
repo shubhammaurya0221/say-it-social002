@@ -156,6 +156,7 @@ export default function WebHeroSection({ scrollY }) {
               borderColor: "#fbaf40",
               boxShadow: "0 0 20px rgba(251, 175, 64, 0.2)",
             }}
+            target="_blank"
             whileTap={{ scale: 0.98 }}
             className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 
                        border-2 border-white/20 text-white font-bold rounded-lg 

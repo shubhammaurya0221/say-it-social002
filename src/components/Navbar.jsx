@@ -28,64 +28,44 @@ export default function Navbar({ currentPage, onPageChange }) {
         </motion.div>
 
         {/* Page Toggle */}
-        {/* <div className="relative flex items-center bg-white/[0.06] rounded-full p-1  border border-white/10 lg:ml-[100px]">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => onPageChange(tab.id)}
-              className={`relative z-10 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-colors duration-300 ${
-                currentPage === tab.id
-                  ? "text-black"
-                  : "text-gray-400 hover:text-white"
-              }`}
-            >
-              {currentPage === tab.id && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute inset-0 bg-[linear-gradient(135deg,#04AAA5_0%,#00F2EA_50%,#04AAA5_100%)] rounded-full"
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{tab.label}</span>
-            </button>
-          ))}
-        </div> */}
-      <div className="relative bg-white/[0.03] backdrop-blur-md rounded-full flex items-center p-1 border border-white/5 lg:ml-[100px] gap-1 sm:gap-2">
-  {tabs.map((tab) => {
-    const isActive = currentPage === tab.id;
-    return (
-      <button
-        key={tab.id}
-        onClick={() => onPageChange(tab.id)}
-        // 1. Added a constant 'border-2' to prevent layout jumps
-        // 2. Used 'duration-500' for smoother color fading
-        className={`group relative px-3 sm:px-6 py-1 sm:py-2 rounded-full text-[10px] sm:text-sm font-bold transition-all duration-500 border-2 outline-none
-          ${isActive 
-            ? "text-white border-[#fbaf40] shadow-[0_0_15px_rgba(251,175,64,0.4)]" 
-            : "text-gray-500 border-transparent hover:text-gray-300 hover:border-white/10"
+        <div className="relative bg-white/[0.03] backdrop-blur-md rounded-full flex items-center p-1 border border-white/5 lg:ml-[100px] gap-1 sm:gap-2">
+          {tabs.map((tab) => {
+            const isActive = currentPage === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => onPageChange(tab.id)}
+                // 1. Added a constant 'border-2' to prevent layout jumps
+                // 2. Used 'duration-500' for smoother color fading
+                className={`group relative px-3 sm:px-6 py-1 sm:py-2 rounded-full text-[10px] sm:text-sm font-bold transition-all duration-500 border-2 outline-none
+          ${
+            isActive
+              ? "text-white border-[#fbaf40] shadow-[0_0_15px_rgba(251,175,64,0.4)]"
+              : "text-gray-500 border-transparent hover:text-gray-300 hover:border-white/10"
           }`}
-      >
-        {isActive && (
-          <motion.div
-            layoutId="activeTabHighlight" // Unique ID to sync the sliding animation
-            className="absolute inset-0 bg-[#fbaf40]/10 rounded-full -z-10"
-            // 3. High stiffness and low damping for a responsive, snappy "spring" feel
-            transition={{ 
-              type: "spring", 
-              stiffness: 500, 
-              damping: 35,
-              mass: 1 
-            }}
-          />
-        )}
-        <span className="relative z-10 whitespace-nowrap">{tab.label}</span>
-      </button>
-    );
-  })}
-</div>
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeTabHighlight" // Unique ID to sync the sliding animation
+                    className="absolute inset-0 bg-[#fbaf40]/10 rounded-full -z-10"
+                    // 3. High stiffness and low damping for a responsive, snappy "spring" feel
+                    transition={{
+                      type: "spring",
+                      stiffness: 500,
+                      damping: 35,
+                      mass: 1,
+                    }}
+                  />
+                )}
+                <span className="relative z-10 whitespace-nowrap">
+                  {tab.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
 
         {/* CTA */}
-
         <motion.a
           href={`https://wa.me/918460732085?text=${encodeURIComponent("Hello!")}`}
           whileHover={{
@@ -93,6 +73,7 @@ export default function Navbar({ currentPage, onPageChange }) {
             borderColor: "#fbaf40",
             boxShadow: "0 0 20px rgba(251, 175, 64, 0.2)",
           }}
+          target="_blank"
           whileTap={{ scale: 0.98 }}
           /* Reduced padding and font size below */
           className="hidden md:flex group relative w-full sm:w-auto px-4 sm:px-6 py-1.5 sm:py-2 
