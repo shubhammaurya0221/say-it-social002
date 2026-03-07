@@ -41,7 +41,7 @@ export default function WebCTASection() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                 >
                     <motion.a
-                        href="googleform"
+                        href={'https://docs.google.com/forms/d/e/1FAIpQLSeUXXa9lXRFU7YtW3CKF_gEf4dL0fAA4aP81gty1gqJmEc3lQ/viewform'}
                         whileHover={{
                           scale: 1.05,
                           borderColor: "#fbaf40",
