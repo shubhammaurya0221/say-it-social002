@@ -171,7 +171,8 @@ export default function WebHeroSection({ scrollY }) {
           </motion.a>
 
           <motion.a
-            href="/"
+            href={'https://sayitsocial.digital/'}
+            target="_blank"
             whileHover={{
               scale: 1.05,
               borderColor: "#fbaf40",
