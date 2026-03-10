@@ -1,8 +1,44 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Globe, Gauge } from "lucide-react";
 import { projects } from "../../data/projects";
 import SectionHeading from "../../components/SectionHeading";
+
+function FloatingParticles() {
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 50 }, (_, i) => ({
+        id: i,
+        size: Math.random() * 3 + 1,
+        left: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 8}s`,
+        duration: `${Math.random() * 6 + 6}s`,
+        color:
+          i % 2 === 0 ? "rgba(4, 170, 165, 0.4)" : "rgba(251, 176, 64, 0.3)",
+      })),
+    []
+  );
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="particle"
+          style={{
+            width: p.size,
+            height: p.size,
+            left: p.left,
+            bottom: "-5%",
+            background: p.color,
+            animationDelay: p.delay,
+            animationDuration: p.duration,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function WebProjects() {
   const [hoveredId, setHoveredId] = useState(null);
@@ -10,8 +46,9 @@ export default function WebProjects() {
   return (
     <section
       id="website-portfolio"
-      className="py-16 sm:py-24 px-4 sm:px-6 bg-black overflow-hidden"
+      className="relative py-16 sm:py-24 px-4 sm:px-6 bg-black overflow-hidden"
     >
+      <FloatingParticles/>
       <div className="max-w-7xl mx-auto">
         <SectionHeading highlight="Projects">Website</SectionHeading>
 

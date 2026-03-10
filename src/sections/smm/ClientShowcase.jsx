@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Instagram, ArrowUpRight } from "lucide-react";
 import { clients, clientCategories, categoryColors } from "../../data/clients";
 import SectionHeading from "../../components/SectionHeading";
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  hidden: { opacity: 0, y: 50, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
@@ -14,6 +14,42 @@ const cardVariants = {
   },
   exit: { opacity: 0, scale: 0.9, transition: { duration: 0.3 } },
 };
+
+function FloatingParticles() {
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        size: Math.random() * 3 + 1,
+        left: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 8}s`,
+        duration: `${Math.random() * 6 + 6}s`,
+        color:
+          i % 2 === 0 ? "rgba(4, 170, 165, 0.4)" : "rgba(251, 176, 64, 0.3)",
+      })),
+    []
+  );
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="particle"
+          style={{
+            width: p.size,
+            height: p.size,
+            left: p.left,
+            bottom: "-5%",
+            background: p.color,
+            animationDelay: p.delay,
+            animationDuration: p.duration,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function ClientShowcase() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -27,8 +63,9 @@ export default function ClientShowcase() {
   return (
     <section
       id="clients"
-      className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-black"
+      className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-black"
     >
+      <FloatingParticles/>
       <div className="max-w-7xl mx-auto">
         <SectionHeading highlight="Clients">Our</SectionHeading>
 
