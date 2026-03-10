@@ -1,99 +1,122 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowUpRight, Globe, Gauge } from 'lucide-react';
-import { projects } from '../../data/projects';
-import SectionHeading from '../../components/SectionHeading';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowUpRight, Globe, Gauge } from "lucide-react";
+import { projects } from "../../data/projects";
+import SectionHeading from "../../components/SectionHeading";
 
 export default function WebProjects() {
-    const [hoveredId, setHoveredId] = useState(null);
+  const [hoveredId, setHoveredId] = useState(null);
 
-    return (
-        <section id="website-portfolio" className="py-20 sm:py-32 px-4 sm:px-6 bg-black overflow-hidden">
-            <div className="max-w-7xl mx-auto">
-                <SectionHeading highlight="Projects">Website</SectionHeading>
+  return (
+    <section
+      id="website-portfolio"
+      className="py-16 sm:py-24 px-4 sm:px-6 bg-black overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto">
+        <SectionHeading highlight="Projects">Website</SectionHeading>
 
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
-                    {projects.map((project, index) => {
-                        const isHovered = hoveredId === project.id;
-                        const span =
-                            index === 0 ? 'md:col-span-6 md:row-span-2' :
-                                index === 1 || index === 2 ? 'md:col-span-6 md:row-span-1' :
-                                    'md:col-span-4 md:row-span-1';
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 mt-10">
 
-                        return (
-                            <motion.a
-                                key={project.id}
-                                href={project.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                                viewport={{ once: true, margin: '-50px' }}
-                                transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                                className={`group relative ${span} cursor-pointer block h-full`}
-                                onMouseEnter={() => setHoveredId(project.id)}
-                                onMouseLeave={() => setHoveredId(null)}
-                            >
-                                <div className={`relative h-full w-full rounded-2xl sm:rounded-3xl glass-card border border-white/10 p-6 sm:p-8 md:p-10 transition-all duration-500 ease-out flex flex-col justify-between overflow-hidden ${isHovered ? 'scale-[1.02] border-gold/40 shadow-[0_0_50px_rgba(4,170,165,0.15)]' : ''
-                                    }`}>
-                                    {/* Top glow */}
-                                    <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-teal/15 to-transparent blur-2xl opacity-40 pointer-events-none" />
-                                    {/* Corner glow */}
-                                    <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/[0.03] rounded-full blur-[80px] pointer-events-none group-hover:bg-teal/10 transition-colors duration-700" />
+          {projects.map((project, index) => {
+            const isHovered = hoveredId === project.id;
 
-                                    {/* Tags + Metrics */}
-                                    <div className="relative z-10">
-                                        <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
-                                            {project.tags.map((tag) => (
-                                                <span
-                                                    key={tag.label}
-                                                    className={`text-[10px] uppercase tracking-widest px-3 py-1 rounded-full border font-bold ${tag.color}`}
-                                                >
-                                                    {tag.label}
-                                                </span>
-                                            ))}
-                                        </div>
+            return (
+              <motion.a
+                key={project.id}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group relative block cursor-pointer"
+                onMouseEnter={() => setHoveredId(project.id)}
+                onMouseLeave={() => setHoveredId(null)}
+              >
+                <div
+                  className={`relative min-h-[260px] sm:min-h-[300px] w-full rounded-2xl sm:rounded-3xl glass-card border border-white/10 p-5 sm:p-7 transition-all duration-500 flex flex-col justify-between overflow-hidden ${
+                    isHovered
+                      ? "scale-[1.02] border-gold/40 shadow-[0_0_40px_rgba(4,170,165,0.15)]"
+                      : ""
+                  }`}
+                >
+                  {/* Top glow */}
+                  <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-teal/15 to-transparent blur-2xl opacity-40 pointer-events-none" />
 
-                                        <h3 className={`font-bold text-white tracking-tight leading-tight font-display transition-all ${index === 0 ? 'text-2xl sm:text-3xl md:text-5xl' : 'text-xl sm:text-2xl md:text-3xl'
-                                            }`}>
-                                            {project.name}
-                                        </h3>
+                  {/* Corner glow */}
+                  <div className="absolute -top-20 -right-20 w-56 h-56 bg-white/[0.03] rounded-full blur-[70px] pointer-events-none group-hover:bg-teal/10 transition-colors duration-700" />
 
-                                        {/* Performance metrics — case study data per GUIDE.txt */}
-                                        {project.metrics && (
-                                            <div className="flex items-center gap-4 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                                <div className="flex items-center gap-1.5 text-xs text-teal">
-                                                    <Gauge className="w-3.5 h-3.5" />
-                                                    <span className="font-semibold">{project.metrics.pageSpeed}</span>
-                                                    <span className="text-gray-500">PageSpeed</span>
-                                                </div>
-                                                <div className="flex items-center gap-1.5 text-xs text-gold">
-                                                    <Globe className="w-3.5 h-3.5" />
-                                                    <span className="font-semibold">{project.metrics.seo}</span>
-                                                    <span className="text-gray-500">SEO</span>
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
+                  {/* Tags + Title */}
+                  <div className="relative z-10">
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag.label}
+                          className={`text-[9px] sm:text-[10px] uppercase tracking-widest px-3 py-1 rounded-full border font-bold ${tag.color}`}
+                        >
+                          {tag.label}
+                        </span>
+                      ))}
+                    </div>
 
-                                    {/* Bottom */}
-                                    <div className="relative z-10">
-                                        <p className="text-gray-400 text-sm md:text-base mb-6 max-w-[90%] leading-relaxed line-clamp-3">
-                                            {project.description}
-                                        </p>
-                                        <div className="flex items-end justify-between">
-                                            <div className={`w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center transition-all duration-500 border border-white/10 ${isHovered ? 'bg-gold rotate-0 scale-110 opacity-100' : '-rotate-45 scale-75 opacity-0'
-                                                }`}>
-                                                <ArrowUpRight className="w-6 h-6 text-black" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.a>
-                        );
-                    })}
+                    <h3 className="font-bold text-white text-lg sm:text-xl md:text-2xl leading-tight font-display">
+                      {project.name}
+                    </h3>
+
+                    {/* Metrics */}
+                    {project.metrics && (
+                      <div className="flex flex-wrap items-center gap-3 mt-2">
+                        <div className="flex items-center gap-1.5 text-xs text-teal">
+                          <Gauge className="w-3.5 h-3.5" />
+                          <span className="font-semibold">
+                            {project.metrics.pageSpeed}
+                          </span>
+                          <span className="text-gray-500">PageSpeed</span>
+                        </div>
+
+                        <div className="flex items-center gap-1.5 text-xs text-gold">
+                          <Globe className="w-3.5 h-3.5" />
+                          <span className="font-semibold">
+                            {project.metrics.seo}
+                          </span>
+                          <span className="text-gray-500">SEO</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Bottom */}
+                  <div className="relative z-10 mt-4">
+                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex items-end justify-end mt-4 relative z-10">
+                      <div
+                        className={`w-10 h-10 rounded-xl bg-gradient-to-br from-teal to-gold flex items-center justify-center transition-all duration-500 ${
+                          isHovered
+                            ? "rotate-0 scale-110 opacity-100"
+                            : "-rotate-45 scale-75 opacity-0"
+                        }`}
+                      >
+                        <ArrowUpRight className="w-5 h-5 text-black" />
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
-            </div>
-        </section>
-    );
+              </motion.a>
+            );
+          })}
+
+        </div>
+      </div>
+    </section>
+  );
 }

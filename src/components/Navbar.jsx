@@ -3,7 +3,7 @@ import SVGLogo from "../../assets/logo.svg";
 
 export default function Navbar({ currentPage, onPageChange }) {
   const tabs = [
-    { id: "smm", label: "Social Media" },
+    { id: "smm", label: "SMM" },
     { id: "websites", label: "Websites" },
   ];
 
