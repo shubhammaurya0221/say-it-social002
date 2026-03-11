@@ -136,13 +136,20 @@ export default function WebProjects() {
                     
                     <div className="flex items-end justify-end mt-4 relative z-10">
                       <div
-                        className={`w-10 h-10 rounded-xl bg-gradient-to-br from-teal to-gold flex items-center justify-center transition-all duration-500 ${
-                          isHovered
-                            ? "rotate-0 scale-110 opacity-100"
-                            : "-rotate-45 scale-75 opacity-0"
-                        }`}
-                      >
-                        <ArrowUpRight className="w-5 h-5 text-black" />
+                        className={`group relative w-10 h-10 rounded-xl 
+                        border-2 border-transparent 
+                        flex items-center justify-center
+                        transition-all duration-500
+                        hover:border-[#fbaf40] 
+                        hover:shadow-[0_0_15px_rgba(251,175,64,0.6)]
+                        ${isHovered ? "rotate-0 scale-110 opacity-100" : "-rotate-45 scale-75 opacity-0"}
+                        `}
+                                            >
+                                              {/* animated glow layer */}
+                                              <span className="absolute inset-0 rounded-xl border-2 border-[#fbaf40] opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+                       
+
+                        <ArrowUpRight className="w-5 h-5 text-[#fbaf40] relative z-10" />
                       </div>
                     </div>
 

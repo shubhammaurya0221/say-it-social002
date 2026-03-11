@@ -27,7 +27,7 @@ function FloatingParticles() {
         color:
           i % 2 === 0 ? "rgba(4, 170, 165, 0.4)" : "rgba(251, 176, 64, 0.3)",
       })),
-    []
+    [],
   );
 
   return (
@@ -65,57 +65,57 @@ export default function ClientShowcase() {
       id="clients"
       className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-black"
     >
-      <FloatingParticles/>
+      <FloatingParticles />
       <div className="max-w-7xl mx-auto">
         <SectionHeading highlight="Clients">Our</SectionHeading>
 
         {/* Category Filter */}
         <motion.div
-  className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-14 px-4"
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6, delay: 0.2 }}
->
-  {clientCategories.map((cat, i) => {
-    const isActive = activeCategory === cat;
-    return (
-      <motion.button
-        key={cat}
-        onClick={() => setActiveCategory(cat)}
-        // Added constant border-2 and removed solid bg-colors
-        className={`group relative px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-500 border-2 outline-none
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-14 px-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {clientCategories.map((cat, i) => {
+            const isActive = activeCategory === cat;
+            return (
+              <motion.button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                // Added constant border-2 and removed solid bg-colors
+                className={`group relative px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-500 border-2 outline-none
           ${
             isActive
               ? "text-white border-[#fbaf40] shadow-[0_0_15px_rgba(251,175,64,0.4)]"
               : "text-gray-500 border-transparent hover:text-gray-300 hover:border-white/10"
           }`}
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4, delay: 0.1 * i }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        {/* The sliding gold highlight */}
-        {isActive && (
-          <motion.div
-            layoutId="activeCategoryHighlight" // Unique ID separate from the social toggle
-            className="absolute inset-0 bg-[#fbaf40]/10 rounded-full -z-10"
-            transition={{
-              type: "spring",
-              stiffness: 500,
-              damping: 35,
-              mass: 1
-            }}
-          />
-        )}
-        
-        <span className="relative z-10 whitespace-nowrap">{cat}</span>
-      </motion.button>
-    );
-  })}
-</motion.div>
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 * i }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {/* The sliding gold highlight */}
+                {isActive && (
+                  <motion.div
+                    layoutId="activeCategoryHighlight" // Unique ID separate from the social toggle
+                    className="absolute inset-0 bg-[#fbaf40]/10 rounded-full -z-10"
+                    transition={{
+                      type: "spring",
+                      stiffness: 500,
+                      damping: 35,
+                      mass: 1,
+                    }}
+                  />
+                )}
+
+                <span className="relative z-10 whitespace-nowrap">{cat}</span>
+              </motion.button>
+            );
+          })}
+        </motion.div>
 
         {/* Client Grid */}
         <motion.div
@@ -189,7 +189,7 @@ export default function ClientShowcase() {
                           {client.metric}
                         </span>
                       </div>
-                      <div
+                      {/* <div
                         className={`w-10 h-10 rounded-xl bg-gradient-to-br from-teal to-gold flex items-center justify-center transition-all duration-500 ${
                           isHovered
                             ? "rotate-0 scale-110 opacity-100"
@@ -197,6 +197,22 @@ export default function ClientShowcase() {
                         }`}
                       >
                         <ArrowUpRight className="w-5 h-5 text-black" />
+                      </div> */}
+                      <div
+                        className={`group relative w-10 h-10 rounded-xl 
+                        border-2 border-transparent 
+                        flex items-center justify-center
+                        transition-all duration-500
+                        hover:border-[#fbaf40] 
+                        hover:shadow-[0_0_15px_rgba(251,175,64,0.6)]
+                        ${isHovered ? "rotate-0 scale-110 opacity-100" : "-rotate-45 scale-75 opacity-0"}
+                        `}
+                                            >
+                                              {/* animated glow layer */}
+                                              <span className="absolute inset-0 rounded-xl border-2 border-[#fbaf40] opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+                       
+
+                        <ArrowUpRight className="w-5 h-5 text-[#fbaf40] relative z-10" />
                       </div>
                     </div>
                   </div>
