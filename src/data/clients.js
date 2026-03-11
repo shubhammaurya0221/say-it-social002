@@ -152,61 +152,61 @@ export const clientCategories = ["All", ...new Set(clients.map(c => c.category))
 
 // Industry color map for category pills
 export const categoryColors = {
-  'Cricket accessories': {
+  'Cricket Accessories': {
     bg: 'bg-emerald-500/15',
     text: 'text-emerald-400',
     border: 'border-emerald-500/30'
   },
 
-  'Optical retail': {
+  'Optical Retail': {
     bg: 'bg-sky-500/15',
     text: 'text-sky-400',
     border: 'border-sky-500/30'
   },
 
-  'Optical manufacturer': {
+  'Optical Manufacturer': {
     bg: 'bg-cyan-500/15',
     text: 'text-cyan-400',
     border: 'border-cyan-500/30'
   },
 
-  'AI/VR solution': {
+  'AI/VR Solution': {
     bg: 'bg-violet-500/15',
     text: 'text-violet-400',
     border: 'border-violet-500/30'
   },
 
-  'Student accommodation': {
+  'Student Accommodation': {
     bg: 'bg-indigo-500/15',
     text: 'text-indigo-400',
     border: 'border-indigo-500/30'
   },
 
-  'Event management': {
+  'Event Management': {
     bg: 'bg-fuchsia-500/15',
     text: 'text-fuchsia-400',
     border: 'border-fuchsia-500/30'
   },
 
-  'Solar panel cleaning services': {
+  'Solar Panel Cleaning Services': {
     bg: 'bg-yellow-500/15',
     text: 'text-yellow-400',
     border: 'border-yellow-500/30'
   },
 
-  'Real estate agency': {
+  'Real Estate Agency': {
     bg: 'bg-orange-500/15',
     text: 'text-orange-400',
     border: 'border-orange-500/30'
   },
 
-  'Real estate': {
+  'Real Estate': {
     bg: 'bg-amber-500/15',
     text: 'text-amber-400',
     border: 'border-amber-500/30'
   },
 
-  'Clothing brand': {
+  'Clothing Brand': {
     bg: 'bg-rose-500/15',
     text: 'text-rose-400',
     border: 'border-rose-500/30'
@@ -218,19 +218,19 @@ export const categoryColors = {
     border: 'border-red-500/30'
   },
 
-  'Food joint': {
+  'Food Joint': {
     bg: 'bg-pink-500/15',
     text: 'text-pink-400',
     border: 'border-pink-500/30'
   },
 
-  'Herbal products': {
+  'Herbal Products': {
     bg: 'bg-green-500/15',
     text: 'text-green-400',
     border: 'border-green-500/30'
   },
 
-  'Makeup artist': {
+  'Makeup Artist': {
     bg: 'bg-purple-500/15',
     text: 'text-purple-400',
     border: 'border-purple-500/30'
@@ -242,3 +242,96 @@ export const categoryColors = {
     border: 'border-blue-500/30'
   }
 };
+
+// // Industry color map for category pills
+// export const categoryColors = {
+//   'Cricket accessories': {
+//     bg: 'bg-emerald-500/15',
+//     text: 'text-emerald-400',
+//     border: 'border-emerald-500/30'
+//   },
+
+//   'Optical retail': {
+//     bg: 'bg-sky-500/15',
+//     text: 'text-sky-400',
+//     border: 'border-sky-500/30'
+//   },
+
+//   'Optical manufacturer': {
+//     bg: 'bg-cyan-500/15',
+//     text: 'text-cyan-400',
+//     border: 'border-cyan-500/30'
+//   },
+
+//   'AI/VR solution': {
+//     bg: 'bg-violet-500/15',
+//     text: 'text-violet-400',
+//     border: 'border-violet-500/30'
+//   },
+
+//   'Student accommodation': {
+//     bg: 'bg-indigo-500/15',
+//     text: 'text-indigo-400',
+//     border: 'border-indigo-500/30'
+//   },
+
+//   'Event management': {
+//     bg: 'bg-fuchsia-500/15',
+//     text: 'text-fuchsia-400',
+//     border: 'border-fuchsia-500/30'
+//   },
+
+//   'Solar panel cleaning services': {
+//     bg: 'bg-yellow-500/15',
+//     text: 'text-yellow-400',
+//     border: 'border-yellow-500/30'
+//   },
+
+//   'Real estate agency': {
+//     bg: 'bg-orange-500/15',
+//     text: 'text-orange-400',
+//     border: 'border-orange-500/30'
+//   },
+
+//   'Real estate': {
+//     bg: 'bg-amber-500/15',
+//     text: 'text-amber-400',
+//     border: 'border-amber-500/30'
+//   },
+
+//   'Clothing brand': {
+//     bg: 'bg-rose-500/15',
+//     text: 'text-rose-400',
+//     border: 'border-rose-500/30'
+//   },
+
+//   'Restaurant': {
+//     bg: 'bg-red-500/15',
+//     text: 'text-red-400',
+//     border: 'border-red-500/30'
+//   },
+
+//   'Food joint': {
+//     bg: 'bg-pink-500/15',
+//     text: 'text-pink-400',
+//     border: 'border-pink-500/30'
+//   },
+
+//   'Herbal products': {
+//     bg: 'bg-green-500/15',
+//     text: 'text-green-400',
+//     border: 'border-green-500/30'
+//   },
+
+//   'Makeup artist': {
+//     bg: 'bg-purple-500/15',
+//     text: 'text-purple-400',
+//     border: 'border-purple-500/30'
+//   },
+
+//   'Preschool': {
+//     bg: 'bg-blue-500/15',
+//     text: 'text-blue-400',
+//     border: 'border-blue-500/30'
+//   }
+// };
